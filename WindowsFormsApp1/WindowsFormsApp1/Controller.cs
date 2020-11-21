@@ -11,19 +11,20 @@ namespace WindowsFormsApp1
         lettersCount,
         lineLength,
         wordsCount,
-        signsCount
+        signsCount,
+        wordsDigitCount
 
     }
     enum SortMethod
     {
-        Bubble,
-        Selection,
-        Insertion,
-        Shell
+        bubble,
+        selection,
+        insertion,
+        shell
     }
     static class Controller
     {
-        public static string[] strs = { "hghAAAAAgh", "hgdAAAAAgfh", "gfgAAAAAAAAAAAAAAAAAAdfdgd", "hghghgfhfAAhhwhrthrtether", "hgghAAAAAAAAAgfh" };
+        public static string[] strs = null;
         public static SortType st;
         public static SortMethod sm;
         static public void Sort()
@@ -51,29 +52,35 @@ namespace WindowsFormsApp1
                         sortedArrByIndexes = SortingTypes.CountByPunctSings(strs);
                         break;
                     }
+                case SortType.wordsDigitCount:
+                    {
+                        sortedArrByIndexes = SortingTypes.CountByWordsDigit(strs);
+                        break;
+                    }
+                    
                 default:
                     break;
             }
 
             switch (sm)
             {
-                case SortMethod.Bubble:
+                case SortMethod.bubble:
                     {
                         Sorting.BubbleSort(strs, sortedArrByIndexes);
                         break;
                     }
-                case SortMethod.Insertion:
+                case SortMethod.insertion:
                     {
                         Sorting.InsertSort(strs, sortedArrByIndexes);
                         break;
                     }
-                case SortMethod.Selection:
+                case SortMethod.selection:
                     {
                         Sorting.SelectionSort(strs, sortedArrByIndexes);
 
                         break;
                     }
-                case SortMethod.Shell:
+                case SortMethod.shell:
                     {
                         Sorting.ShellSorting(strs, sortedArrByIndexes);
                         break;

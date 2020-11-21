@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Result = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.sortType = new System.Windows.Forms.GroupBox();
             this.wordsCount = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.wordsDigitCount = new System.Windows.Forms.RadioButton();
             this.signsCount = new System.Windows.Forms.RadioButton();
             this.lineLength = new System.Windows.Forms.RadioButton();
             this.lettersCount = new System.Windows.Forms.RadioButton();
@@ -53,25 +53,24 @@
             // 
             // Result
             // 
-            chartArea1.Name = "ChartArea1";
-            this.Result.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.Result.ChartAreas.Add(chartArea2);
             this.Result.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.Result.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.Result.Legends.Add(legend2);
             this.Result.Location = new System.Drawing.Point(0, 0);
             this.Result.Name = "Result";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.Result.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.Result.Series.Add(series2);
             this.Result.Size = new System.Drawing.Size(800, 450);
             this.Result.TabIndex = 0;
-            this.Result.Click += new System.EventHandler(this.Result_Click);
             // 
             // sortType
             // 
             this.sortType.Controls.Add(this.wordsCount);
-            this.sortType.Controls.Add(this.radioButton6);
+            this.sortType.Controls.Add(this.wordsDigitCount);
             this.sortType.Controls.Add(this.signsCount);
             this.sortType.Controls.Add(this.lineLength);
             this.sortType.Controls.Add(this.lettersCount);
@@ -93,16 +92,16 @@
             this.wordsCount.UseVisualStyleBackColor = true;
             this.wordsCount.CheckedChanged += new System.EventHandler(this.SortType_CheckedChanged);
             // 
-            // radioButton6
+            // wordsDigitCount
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(7, 112);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(85, 17);
-            this.radioButton6.TabIndex = 2;
-            this.radioButton6.Text = "radioButton6";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            this.radioButton6.CheckedChanged += new System.EventHandler(this.SortType_CheckedChanged);
+            this.wordsDigitCount.AutoSize = true;
+            this.wordsDigitCount.Location = new System.Drawing.Point(7, 112);
+            this.wordsDigitCount.Name = "wordsDigitCount";
+            this.wordsDigitCount.Size = new System.Drawing.Size(81, 17);
+            this.wordsDigitCount.TabIndex = 2;
+            this.wordsDigitCount.Text = "Words-digit ";
+            this.wordsDigitCount.UseVisualStyleBackColor = true;
+            this.wordsDigitCount.CheckedChanged += new System.EventHandler(this.SortType_CheckedChanged);
             // 
             // signsCount
             // 
@@ -200,7 +199,7 @@
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(705, 412);
+            this.start.Location = new System.Drawing.Point(694, 389);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(97, 23);
             this.start.TabIndex = 5;
@@ -220,7 +219,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Открыть файл";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -234,7 +233,6 @@
             this.Controls.Add(this.Result);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Result)).EndInit();
             this.sortType.ResumeLayout(false);
             this.sortType.PerformLayout();
@@ -249,7 +247,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart Result;
         private System.Windows.Forms.GroupBox sortType;
         private System.Windows.Forms.RadioButton wordsCount;
-        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton wordsDigitCount;
         private System.Windows.Forms.RadioButton signsCount;
         private System.Windows.Forms.RadioButton lineLength;
         private System.Windows.Forms.RadioButton lettersCount;

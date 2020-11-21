@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
 
 
-                            Thread.Sleep(500);
+                            Thread.Sleep(100);
 
                         }
                         ++index2;
@@ -54,6 +54,7 @@ namespace WindowsFormsApp1
             string tmpStr;
             int length = strs.Length;
             Series series = new Series("Length");
+            ViewController.ChageChart(sortedIndexs);
             try
             {
                 for (int i = 0, j, k = 0; i < length - 1; ++i)
@@ -75,7 +76,7 @@ namespace WindowsFormsApp1
                         strs[i] = tmpStr;
                         ViewController.ChageChart(sortedIndexs);
 
-                        Thread.Sleep(500);
+                        Thread.Sleep(100);
                     }
                 }
             }
@@ -92,6 +93,7 @@ namespace WindowsFormsApp1
             int tmpInt;
             string tmpStr;
             Series series = new Series("Length");
+            ViewController.ChageChart(sortedIndexs);
             try
             {
                 for (int index = 1, index2; index < length; index++)
@@ -109,7 +111,7 @@ namespace WindowsFormsApp1
                             strs[index2 + 1] = tmpStr;
                             ViewController.ChageChart(sortedIndexs);
 
-                            Thread.Sleep(500);
+                            Thread.Sleep(100);
                         }
                         else
                             break;
@@ -128,6 +130,7 @@ namespace WindowsFormsApp1
             int tmpInt;
             string tmpStr;
             Series series = new Series("Length");
+            ViewController.ChageChart(sortedIndexs);
             try
             {
                 for (int step = length / 2; step > 0; step /= 2)
@@ -145,7 +148,7 @@ namespace WindowsFormsApp1
                             strs[j + step] = tmpStr;
 
                             ViewController.ChageChart(sortedIndexs);
-                            Thread.Sleep(500);
+                            Thread.Sleep(100);
                         }
                     }
                 }

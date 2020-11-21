@@ -32,19 +32,27 @@ namespace WindowsFormsApp1
 
         private void SortMethod_CheckedChanged(object sender, EventArgs e)
         {
-            Controller.sm = (SortMethod)Enum.Parse(typeof(SortType), (sender as RadioButton).Name);
+            Controller.sm = (SortMethod)Enum.Parse(typeof(SortMethod), (sender as RadioButton).Name);
 
         }
         private void start_Click(object sender, EventArgs e)
         {
-            //strs = System.IO.File.ReadAllLines(fname);
+            if (fname != null)
+            {
+                Controller.strs = System.IO.File.ReadAllLines(fname);
 
-            progressThread = new Thread(
-               Controller.Sort
-            );
-            progressThread?.Start();
+                progressThread = new Thread(
+                   Controller.Sort
+                );
+                progressThread?.Start();
+            }
+            else
+            {
+                MessageBox.Show("Please, choose file");
+            }
         }   
-        private void button1_MouseClick(object sender, MouseEventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog fdlg = new OpenFileDialog();
             fdlg.Title = "File Dialog";
@@ -56,14 +64,6 @@ namespace WindowsFormsApp1
             {
                 fname = fdlg.FileName;
             }
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void Result_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
